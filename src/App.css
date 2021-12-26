@@ -60,4 +60,134 @@ box-sizing: border-box;
 
 /*#endregion*/
 
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
 
+/* 
+==================================
+ShotsGrid
+==================================
+*/
+
+.shots-grid {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: auto;
+  text-align: center;
+  width: max-content;
+}
+
+.teams {
+  border-left: 1px solid black;
+}
+
+.period,
+.teams {
+  border: 1px solid black;
+  border-top: none;
+  display: flex;
+  flex-direction: column;
+  width: 8.875rem;
+}
+
+.period {
+  border-left: none;
+}
+
+.period-title {
+  color: white;
+  background-color: hsl(120, 100%, 31%);
+  padding: 0.125rem 0.625rem 0.125rem 0.625rem;
+  height: max-content;
+  width: 100%;
+}
+
+.period-shots,
+.home-guest {
+  padding: 0.625rem;
+}
+
+.home-guest {
+  display: flex;
+  flex-direction: column;
+}
+
+.home-guest > input {
+  width: max-content;
+}
+
+.home-name,
+.guest-name {
+  max-height: 1rem;
+  overflow: hidden;
+}
+
+.shot-totals {
+  border-right: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+@media screen and (max-width: 765px) {
+  .shots-grid {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .shots-grid > div {
+    width: 100%;
+  }
+
+  .home-guest {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100%;
+    gap: 1rem;
+  }
+
+  .home-name,
+  .guest-name {
+    max-width: 6rem;
+    min-width: 4rem;
+  }
+
+  .period,
+  .teams {
+    border-top: none;
+    border-bottom: none;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+  }
+
+  .period {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .period-shots {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+  }
+
+  .shot-totals {
+    border-left: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .home-guest-totals > div {
+    margin: 0 10px;
+  }
+
+}

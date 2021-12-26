@@ -1,6 +1,9 @@
 import React from 'react'
+// import useWindowDimensions from '../Hooks/useWindowDimensions';
 
-function ShotsGrid({shotsObject, setShotsObject}) {
+function ShotsGrid({shotsObject, setShotsObject, teamNames}) {
+
+  // const {height, width} = useWindowDimensions();
 
   function returnShotTotal(team) {
     var total = 0;
@@ -15,28 +18,25 @@ function ShotsGrid({shotsObject, setShotsObject}) {
     return (
       <div
         key={periodKeyname}
-        style={{
-          textAlign: 'center',
-          
-        }}
+        className='period'
       >
         <h4
-          style={{
-            backgroundColor: 'rgb(0, 160, 0)',
-            color: 'white',
-            padding: '2px 10px 2px 10px',
-            marginBottom: '10px',
-        }}
+          className='period-title'
         >{periodKeyname.toUpperCase()}</h4>
+
         <div
-          className='home-team-shots'
+          className='period-shots'
         >
-          {shotsObject[periodKeyname].home}
-        </div>
-        <div
-          className='guest-team-shots'
-        >
-          {shotsObject[periodKeyname].guest}
+          <div
+            className='home-team-shots'
+          >
+            {shotsObject[periodKeyname].home}
+          </div>
+          <div
+            className='guest-team-shots'
+          >
+            {shotsObject[periodKeyname].guest}
+          </div>
         </div>
       </div>
     )
@@ -44,32 +44,36 @@ function ShotsGrid({shotsObject, setShotsObject}) {
 
   return (
     <div
-      style={{
-        display: 'flex',
-        margin: 'auto',
-        width: 'max-content',
-      }}
+      className='shots-grid'
     >
       <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'end',
-        }}
+        className='teams'
       >
-        <div>Home</div>
-        <div>Guest</div>
+        <h4
+          className='period-title'
+        >Teams</h4>
+        <div
+          className='home-guest'
+        >
+          <div className="home-name">{teamNames.Home}</div>
+          <div className="guest-name">{teamNames.Guest}</div>
+        </div>
       </div>
       {shotsObjectMapped}
       <div
-        style={{
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'end',
-        }}
+        className='shot-totals'
       >
-        <div>{returnShotTotal('home')}</div>
-        <div>{returnShotTotal('guest')}</div>
+        <h4
+          className='period-title'
+        >
+          Total
+        </h4>
+        <div
+          className='period-shots'
+        >
+          <div>{returnShotTotal('home')}</div>
+          <div>{returnShotTotal('guest')}</div>
+        </div>
       </div>
     </div>
   )

@@ -2,11 +2,13 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import ShotsGrid from './Components/ShotsGrid.jsx';
+import TeamNameInputs from './Components/TeamNameInputs.jsx'
 
 function App() {
 
   const [shotsObject, setShotsObject] = useState(initilizeShotsObject());
   const [currentPeriod, setCurrentPeriod] = useState('firstPeriod');
+  const [teamNames, setTeamNames] = useState({Home: 'Home', Guest: 'Guest'});
 
   useEffect(() => {
     document.addEventListener('keyup', handleKeyPresses)
@@ -106,7 +108,10 @@ function App() {
       <ShotsGrid 
         shotsObject={shotsObject} 
         setShotsObject={(obj) => {setShotsObject(obj)}} 
+        teamNames = {teamNames}
       />
+
+      <TeamNameInputs teamNames={teamNames} setTeamNames={(obj) => setTeamNames(obj)}/>
     </div>
   );
 }
