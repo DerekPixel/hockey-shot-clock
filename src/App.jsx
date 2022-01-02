@@ -9,6 +9,7 @@ function App() {
   const [shotsObject, setShotsObject] = useState(initilizeShotsObject());
   const [currentPeriod, setCurrentPeriod] = useState('firstPeriod');
   const [teamNames, setTeamNames] = useState({Home: 'Home', Guest: 'Guest'});
+  const [teamNameInputsInFocus, setTeamNameInputsInFocus] = useState(false);
 
   useEffect(() => {
     document.addEventListener('keyup', handleKeyPresses)
@@ -19,16 +20,49 @@ function App() {
 
   function initilizeShotsObject() {
     var shots = {
-      firstPeriod: {home: 0, guest: 0},
-      secondPeriod: {home: 0, guest: 0},
-      thirdPeriod: {home: 0, guest: 0},
-      overTime: {home: 0, guest: 0},
+      firstPeriod: {home: 0, guest: 0, period: 'First Period'},
+      secondPeriod: {home: 0, guest: 0, period: 'Second Period'},
+      thirdPeriod: {home: 0, guest: 0, period: 'Third Period'},
+      overTime: {home: 0, guest: 0, period: 'Over Time'},
     };
 
     return shots;
   }
 
+  // function useKey(key) {
+  //   // Keep track of key state
+  //   const [pressed, setPressed] = useState(false)
+
+  //   // Does an event match the key we're watching?
+  //   const match = event => key.toLowerCase() === event.key.toLowerCase()
+
+  //   // Event handlers
+  //   const onDown = event => {
+  //     if (match(event)) setPressed(true)
+  //   }
+
+  //   const onUp = event => {
+  //     if (match(event)) setPressed(false)
+  //   }
+
+  //   // Bind and unbind events
+  //   useEffect(() => {
+  //     window.addEventListener("keydown", onDown)
+  //     window.addEventListener("keyup", onUp)
+  //     return () => {
+  //       window.removeEventListener("keydown", onDown)
+  //       window.removeEventListener("keyup", onUp)
+  //     }
+  //   }, [key])
+
+  //   return pressed
+  // }
+
+  // if(useKey('k')) console.log('hello');
+
   function handleKeyPresses(e) {
+
+    if(teamNameInputsInFocus) return;
 
     let shotsClone = duplicateObjectsInArrayOrObject(shotsObject);
 
@@ -108,10 +142,14 @@ function App() {
       <ShotsGrid 
         shotsObject={shotsObject} 
         setShotsObject={(obj) => {setShotsObject(obj)}} 
-        teamNames = {teamNames}
+        teamNames={teamNames}
       />
 
-      <TeamNameInputs teamNames={teamNames} setTeamNames={(obj) => setTeamNames(obj)}/>
+      <TeamNameInputs 
+        teamNames={teamNames} 
+        setTeamNames={(obj) => setTeamNames(obj)} 
+        setTeamNameInputsInFocus={(bool) => setTeamNameInputsInFocus(bool)}
+      />
     </div>
   );
 }
