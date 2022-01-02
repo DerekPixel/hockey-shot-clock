@@ -91,7 +91,7 @@ ShotsGrid
   border-top: none;
   display: flex;
   flex-direction: column;
-  width: 8.875rem;
+  max-width: 10rem;
 }
 
 .period {
@@ -99,8 +99,9 @@ ShotsGrid
 }
 
 .period-title {
-  color: white;
+  color: black;
   background-color: hsl(120, 100%, 31%);
+  font-weight: bold;
   padding: 0.125rem 0.625rem 0.125rem 0.625rem;
   height: max-content;
   width: 100%;
@@ -131,7 +132,7 @@ ShotsGrid
   border-bottom: 1px solid black;
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 800px) {
   .shots-grid {
     flex-direction: column;
     justify-content: center;
@@ -162,6 +163,8 @@ ShotsGrid
     border-bottom: none;
     border-left: 1px solid black;
     border-right: 1px solid black;
+    max-width: none;
+    width: 10rem;
   }
 
   .period {

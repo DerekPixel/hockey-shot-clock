@@ -29,6 +29,11 @@ function App() {
     return shots;
   }
 
+  function resetShotsObjectAndCurrentPeriod() {
+    setShotsObject(initilizeShotsObject());
+    setCurrentPeriod('firstPeriod');
+  }
+
   // function useKey(key) {
   //   // Keep track of key state
   //   const [pressed, setPressed] = useState(false)
@@ -139,17 +144,21 @@ function App() {
 
   return (
     <div className="App">
-      <ShotsGrid 
-        shotsObject={shotsObject} 
-        setShotsObject={(obj) => {setShotsObject(obj)}} 
-        teamNames={teamNames}
-      />
-
       <TeamNameInputs 
         teamNames={teamNames} 
         setTeamNames={(obj) => setTeamNames(obj)} 
         setTeamNameInputsInFocus={(bool) => setTeamNameInputsInFocus(bool)}
       />
+      <ShotsGrid 
+        shotsObject={shotsObject} 
+        setShotsObject={(obj) => {setShotsObject(obj)}} 
+        currentPeriod={currentPeriod}
+        teamNames={teamNames}
+      />
+      <button
+        onClick={() => resetShotsObjectAndCurrentPeriod()}
+      >RESET</button>
+
     </div>
   );
 }

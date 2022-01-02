@@ -1,7 +1,7 @@
 import React from 'react'
 // import useWindowDimensions from '../Hooks/useWindowDimensions';
 
-function ShotsGrid({shotsObject, setShotsObject, teamNames}) {
+function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
 
   // const {height, width} = useWindowDimensions();
 
@@ -22,7 +22,11 @@ function ShotsGrid({shotsObject, setShotsObject, teamNames}) {
       >
         <h4
           className='period-title'
-        >{periodKeyname.toUpperCase()}</h4>
+          style={{
+            // color: periodKeyname === currentPeriod ? 'red' : 'black'
+            textShadow: periodKeyname === currentPeriod && '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white'
+          }}
+        >{shotsObject[periodKeyname].period.toUpperCase()}</h4>
 
         <div
           className='period-shots'
