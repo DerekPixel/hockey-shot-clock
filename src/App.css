@@ -61,9 +61,56 @@ box-sizing: border-box;
 /*#endregion*/
 
 .App {
+  align-items: center;
   display: flex;
   flex-direction: column;
+  padding-top: 2rem;
   height: 100vh;
+}
+
+.App > div {
+  margin-bottom: 1rem;
+}
+
+/* 
+==================================
+TeamNameInputs
+==================================
+*/
+
+.input-container {
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 10rem;
+}
+
+.team-name-title {
+  color: black;
+  background-color: hsl(120, 100%, 31%);
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  padding: 0.125rem 0.250rem;
+  width: 100%;
+}
+
+.input-container > input {
+  margin-bottom: 0.5rem;
+}
+
+.input-container > input[type='text'] {
+  border: 1px solid black;
+  border-left: none;
+  border-right: none;
+  width: 100%;
+}
+
+.team-names-submit-btn {
+  /* border: none; */
+  border: 1px solid black;
+  background-color: hsl(120, 100%, 31%);
+  width: 90%;
 }
 
 /* 
@@ -76,7 +123,7 @@ ShotsGrid
   display: flex;
   flex-direction: row;
   align-items: center;
-  margin: auto;
+  /* margin: auto; */
   text-align: center;
   width: max-content;
 }
@@ -88,7 +135,7 @@ ShotsGrid
 .period,
 .teams {
   border: 1px solid black;
-  border-top: none;
+  /* border-top: none; */
   display: flex;
   flex-direction: column;
   max-width: 10rem;
@@ -128,8 +175,10 @@ ShotsGrid
 }
 
 .shot-totals {
-  border-right: 1px solid black;
-  border-bottom: 1px solid black;
+  border: 1px solid black;
+  border-left: none;
+  /* border-right: 1px solid black;
+  border-bottom: 1px solid black; */
 }
 
 @media screen and (max-width: 800px) {
@@ -147,7 +196,6 @@ ShotsGrid
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    width: 100%;
     gap: 1rem;
   }
 
@@ -164,7 +212,10 @@ ShotsGrid
     border-left: 1px solid black;
     border-right: 1px solid black;
     max-width: none;
-    width: 10rem;
+  }
+
+  .teams {
+    border-top: 1px solid black;
   }
 
   .period {
@@ -182,15 +233,24 @@ ShotsGrid
 
   .shot-totals {
     border-left: 1px solid black;
+    border-top: none;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
   }
 
-  .home-guest-totals > div {
-    margin: 0 10px;
-  }
+}
 
+/* 
+==================================
+Reset Button
+==================================
+*/
+
+.reset-btn {
+  color: white;
+  background-color: rgb(192, 52, 52);
+  border: 1px solid black;
+  width: 10rem;
 }

@@ -39,10 +39,18 @@ function TeamNameInputs({teamNames, setTeamNames, setTeamNameInputsInFocus}) {
 
   return (
     <div className='input-container' ref={inputContainer}>
+      <h4
+        className='team-name-title'
+      >Team Names</h4>
+
       <input type="text" defaultValue={homeName} onChange={(e) => setHomeName(e.target.value)}/>
       <input type="text" defaultValue={guestName} onChange={(e) => setGuestName(e.target.value)}/>
-      <input type="button" onKeyUp={(e) => handleKeyUP(e)} value="Enter" onClick={() => makeTeamNameObjectAndSetNames(homeName
-        , guestName)}/>
+      <input 
+        className='team-names-submit-btn'
+        type="button" 
+        onKeyUp={(e) => handleKeyUP(e)} 
+        value="Enter" onClick={() => makeTeamNameObjectAndSetNames(homeName, guestName)}
+      />
     </div>
   )
 }

@@ -100,13 +100,13 @@ function App() {
           setCurrentPeriod('overTime');
         }
         break;
-      case ',':
+      case 'b':
         if(shotsClone[currentPeriod].guest !== 0) {
           shotsClone[currentPeriod].guest -= 1;
         }
         setShotsObject(shotsClone);
         break;
-      case '.':
+      case 'n':
         if(shotsClone[currentPeriod].home !== 0) {
           shotsClone[currentPeriod].home -= 1;
         }
@@ -156,6 +156,7 @@ function App() {
         teamNames={teamNames}
       />
       <button
+        className='reset-btn'
         onClick={() => resetShotsObjectAndCurrentPeriod()}
       >RESET</button>
 
