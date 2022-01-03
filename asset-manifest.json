@@ -1,22 +1,22 @@
 {
   "files": {
     "main.css": "/hockey-shot-clock/static/css/main.9db0511a.chunk.css",
-    "main.js": "/hockey-shot-clock/static/js/main.8c70694b.chunk.js",
-    "main.js.map": "/hockey-shot-clock/static/js/main.8c70694b.chunk.js.map",
-    "runtime-main.js": "/hockey-shot-clock/static/js/runtime-main.284e5404.js",
-    "runtime-main.js.map": "/hockey-shot-clock/static/js/runtime-main.284e5404.js.map",
-    "static/js/2.0b9530c2.chunk.js": "/hockey-shot-clock/static/js/2.0b9530c2.chunk.js",
-    "static/js/2.0b9530c2.chunk.js.map": "/hockey-shot-clock/static/js/2.0b9530c2.chunk.js.map",
-    "static/js/3.75a43024.chunk.js": "/hockey-shot-clock/static/js/3.75a43024.chunk.js",
-    "static/js/3.75a43024.chunk.js.map": "/hockey-shot-clock/static/js/3.75a43024.chunk.js.map",
+    "main.js": "/hockey-shot-clock/static/js/main.26d8c728.chunk.js",
+    "main.js.map": "/hockey-shot-clock/static/js/main.26d8c728.chunk.js.map",
+    "runtime-main.js": "/hockey-shot-clock/static/js/runtime-main.95bcda73.js",
+    "runtime-main.js.map": "/hockey-shot-clock/static/js/runtime-main.95bcda73.js.map",
+    "static/js/2.ef0b8fef.chunk.js": "/hockey-shot-clock/static/js/2.ef0b8fef.chunk.js",
+    "static/js/2.ef0b8fef.chunk.js.map": "/hockey-shot-clock/static/js/2.ef0b8fef.chunk.js.map",
+    "static/js/3.e79a9aee.chunk.js": "/hockey-shot-clock/static/js/3.e79a9aee.chunk.js",
+    "static/js/3.e79a9aee.chunk.js.map": "/hockey-shot-clock/static/js/3.e79a9aee.chunk.js.map",
     "index.html": "/hockey-shot-clock/index.html",
     "static/css/main.9db0511a.chunk.css.map": "/hockey-shot-clock/static/css/main.9db0511a.chunk.css.map",
-    "static/js/2.0b9530c2.chunk.js.LICENSE.txt": "/hockey-shot-clock/static/js/2.0b9530c2.chunk.js.LICENSE.txt"
+    "static/js/2.ef0b8fef.chunk.js.LICENSE.txt": "/hockey-shot-clock/static/js/2.ef0b8fef.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.284e5404.js",
-    "static/js/2.0b9530c2.chunk.js",
+    "static/js/runtime-main.95bcda73.js",
+    "static/js/2.ef0b8fef.chunk.js",
     "static/css/main.9db0511a.chunk.css",
-    "static/js/main.8c70694b.chunk.js"
+    "static/js/main.26d8c728.chunk.js"
   ]
 }
