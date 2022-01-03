@@ -1,5 +1,5 @@
 import React from 'react'
-import { useState, useRef, useEffect } from 'react/cjs/react.development'
+import { useState, useRef, useEffect } from 'react'
 
 function TeamNameInputs({teamNames, setTeamNames, setTeamNameInputsInFocus}) {
 
