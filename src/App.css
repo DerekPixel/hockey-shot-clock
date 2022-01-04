@@ -107,10 +107,13 @@ TeamNameInputs
 }
 
 .team-names-submit-btn {
-  /* border: none; */
   border: 1px solid black;
   background-color: hsl(120, 100%, 31%);
   width: 90%;
+}
+
+.team-names-submit-btn:focus {
+  outline-color: red;
 }
 
 /* 
@@ -123,7 +126,6 @@ ShotsGrid
   display: flex;
   flex-direction: row;
   align-items: center;
-  /* margin: auto; */
   text-align: center;
   width: max-content;
 }
@@ -135,7 +137,6 @@ ShotsGrid
 .period,
 .teams {
   border: 1px solid black;
-  /* border-top: none; */
   display: flex;
   flex-direction: column;
   max-width: 10rem;
@@ -177,8 +178,6 @@ ShotsGrid
 .shot-totals {
   border: 1px solid black;
   border-left: none;
-  /* border-right: 1px solid black;
-  border-bottom: 1px solid black; */
 }
 
 @media screen and (max-width: 800px) {

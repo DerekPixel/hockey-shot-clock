@@ -4,6 +4,7 @@ import React from 'react'
 function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
 
   // const {height, width} = useWindowDimensions();
+  const TSCol = 'hsl(300, 100%, 69%)';
 
   function returnShotTotal(team) {
     var total = 0;
@@ -24,7 +25,7 @@ function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
           className='period-title'
           style={{
             // color: periodKeyname === currentPeriod ? 'red' : 'black'
-            textShadow: periodKeyname === currentPeriod && '-1px 0 white, 0 1px white, 1px 0 white, 0 -1px white'
+            textShadow: periodKeyname === currentPeriod && `-1px 0 ${TSCol}, 0 1px ${TSCol}, 1px 0 ${TSCol}, 0 -1px ${TSCol}`
           }}
         >{shotsObject[periodKeyname].period.toUpperCase()}</h4>
 

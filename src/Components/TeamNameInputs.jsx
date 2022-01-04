@@ -7,6 +7,7 @@ function TeamNameInputs({teamNames, setTeamNames, setTeamNameInputsInFocus}) {
   const [guestName, setGuestName] = useState('Guest');
 
   const inputContainer = useRef(null);
+  const submitButton = useRef(null);
 
   useEffect(() => {
     document.addEventListener('click', handleDocumentClick);
@@ -15,13 +16,17 @@ function TeamNameInputs({teamNames, setTeamNames, setTeamNameInputsInFocus}) {
     }
   })
 
-  function makeTeamNameObjectAndSetNames(homeName, guestName) {
+  function makeTeamNameObjectAndSetNames(homeName, guestName, e) {
     var obj = {Home: homeName, Guest: guestName};
-
     setTeamNames(obj);
+
+    e.target.blur();
+    setTeamNameInputsInFocus(false);
   } 
 
   function handleDocumentClick(e) {
+    if(submitButton.current === e.target) return
+
     if(inputContainer.current && !inputContainer.current.contains(e.target)) {
       setTeamNameInputsInFocus(false);
     } else {
@@ -47,9 +52,11 @@ function TeamNameInputs({teamNames, setTeamNames, setTeamNameInputsInFocus}) {
       <input type="text" defaultValue={guestName} onChange={(e) => setGuestName(e.target.value)}/>
       <input 
         className='team-names-submit-btn'
+        ref={submitButton}
         type="button" 
         onKeyUp={(e) => handleKeyUP(e)} 
-        value="Enter" onClick={() => makeTeamNameObjectAndSetNames(homeName, guestName)}
+        value="Enter" 
+        onClick={(e) => makeTeamNameObjectAndSetNames(homeName, guestName, e)}
       />
     </div>
   )
