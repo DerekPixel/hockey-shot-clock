@@ -1,10 +1,6 @@
 import React from 'react'
-// import useWindowDimensions from '../Hooks/useWindowDimensions';
 
 function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
-
-  // const {height, width} = useWindowDimensions();
-  const TSCol = 'hsl(300, 100%, 69%)';
 
   function returnShotTotal(team) {
     var total = 0;
@@ -24,8 +20,7 @@ function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
         <h4
           className='period-title'
           style={{
-            // color: periodKeyname === currentPeriod ? 'red' : 'black'
-            textShadow: periodKeyname === currentPeriod && `-1px 0 ${TSCol}, 0 1px ${TSCol}, 1px 0 ${TSCol}, 0 -1px ${TSCol}`
+            backgroundColor: periodKeyname === currentPeriod && 'hsl(120, 100%, 50%)'
           }}
         >{shotsObject[periodKeyname].period.toUpperCase()}</h4>
 

@@ -101,9 +101,7 @@ TeamNameInputs
 
 .input-container > input[type='text'] {
   border: 1px solid black;
-  border-left: none;
-  border-right: none;
-  width: 100%;
+  width: 95%;
 }
 
 .team-names-submit-btn {
@@ -114,6 +112,11 @@ TeamNameInputs
 
 .team-names-submit-btn:focus {
   outline-color: red;
+}
+
+.team-names-submit-btn:hover {
+  background-color: hsl(120, 100%, 50%);
+  cursor: pointer;
 }
 
 /* 
@@ -249,7 +252,12 @@ Reset Button
 
 .reset-btn {
   color: white;
-  background-color: rgb(192, 52, 52);
+  background-color: hsl(0, 57%, 48%);
   border: 1px solid black;
   width: 10rem;
+}
+
+.reset-btn:hover {
+  cursor: pointer;
+  background-color: hsl(0, 57%, 60%);
 }
