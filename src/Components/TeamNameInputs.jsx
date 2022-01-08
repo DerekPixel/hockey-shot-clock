@@ -43,7 +43,7 @@ function TeamNameInputs({teamNames, setTeamNames, setTeamNameInputsInFocus}) {
   }
 
   return (
-    <div className='input-container' ref={inputContainer}>
+    <div className='input-container flex' ref={inputContainer}>
       <h4
         className='team-name-title'
       >Team Names</h4>
