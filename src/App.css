@@ -74,13 +74,22 @@ box-sizing: border-box;
 
 /* 
 ==================================
+Generic Classes
+==================================
+*/
+
+.flex {
+  display: flex;
+}
+
+/* 
+==================================
 TeamNameInputs
 ==================================
 */
 
 .input-container {
   border: 1px solid black;
-  display: flex;
   flex-direction: column;
   align-items: center;
   width: 10rem;
@@ -126,7 +135,6 @@ ShotsGrid
 */
 
 .shots-grid {
-  display: flex;
   flex-direction: row;
   align-items: center;
   text-align: center;
@@ -140,7 +148,6 @@ ShotsGrid
 .period,
 .teams {
   border: 1px solid black;
-  display: flex;
   flex-direction: column;
   max-width: 10rem;
 }
@@ -164,7 +171,6 @@ ShotsGrid
 }
 
 .home-guest {
-  display: flex;
   flex-direction: column;
 }
 
@@ -195,7 +201,6 @@ ShotsGrid
   }
 
   .home-guest {
-    display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     gap: 1rem;
@@ -222,7 +227,6 @@ ShotsGrid
 
   .period {
     align-items: center;
-    display: flex;
     flex-direction: column;
   }
 
