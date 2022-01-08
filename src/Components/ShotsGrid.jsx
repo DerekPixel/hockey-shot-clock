@@ -15,7 +15,7 @@ function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
     return (
       <div
         key={periodKeyname}
-        className='period'
+        className='period flex'
       >
         <h4
           className='period-title'
@@ -44,16 +44,16 @@ function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
 
   return (
     <div
-      className='shots-grid'
+      className='shots-grid flex'
     >
       <div
-        className='teams'
+        className='teams flex'
       >
         <h4
           className='period-title'
         >Teams</h4>
         <div
-          className='home-guest'
+          className='home-guest flex'
         >
           <div className="home-name">{teamNames.Home}</div>
           <div className="guest-name">{teamNames.Guest}</div>
