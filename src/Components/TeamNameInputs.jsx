@@ -51,7 +51,7 @@ function TeamNameInputs({teamNames, setTeamNames, setTeamNameInputsInFocus}) {
       <input type="text" defaultValue={homeName} onChange={(e) => setHomeName(e.target.value)}/>
       <input type="text" defaultValue={guestName} onChange={(e) => setGuestName(e.target.value)}/>
       <input 
-        className='team-names-submit-btn'
+        className='team-names-submit-btn green-btn'
         ref={submitButton}
         type="button" 
         onKeyUp={(e) => handleKeyUP(e)} 
