@@ -3,6 +3,8 @@ import { useState, useEffect } from 'react';
 import './App.css';
 import ShotsGrid from './Components/ShotsGrid.jsx';
 import TeamNameInputs from './Components/TeamNameInputs.jsx'
+import ShotsGridControls from './Components/ShotsGridControls.jsx';
+
 
 function App() {
 
@@ -66,12 +68,18 @@ function App() {
   // if(useKey('k')) console.log('hello');
 
   function handleKeyPresses(e) {
+    var value = e.key;
+
+    handleValueFromInput(value);
+  }
+
+  function handleValueFromInput(value) {
 
     if(teamNameInputsInFocus) return;
 
     let shotsClone = duplicateObjectsInArrayOrObject(shotsObject);
 
-    switch (e.key) {
+    switch (value) {
       case 'h':
         shotsClone[currentPeriod].home += 1;
         setShotsObject(shotsClone);
@@ -143,7 +151,7 @@ function App() {
   }
 
   return (
-    <div className="App">
+    <div className="App flex">
       <TeamNameInputs 
         teamNames={teamNames} 
         setTeamNames={(obj) => setTeamNames(obj)} 
@@ -155,6 +163,9 @@ function App() {
         currentPeriod={currentPeriod}
         teamNames={teamNames}
       />
+
+      <ShotsGridControls handleValueFromInput={(value) => handleValueFromInput(value)} />
+
       <button
         className='reset-btn'
         onClick={() => resetShotsObjectAndCurrentPeriod()}
