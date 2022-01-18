@@ -60,6 +60,10 @@ box-sizing: border-box;
 
 /*#endregion*/
 
+:root {
+  font-family: sans-serif;
+}
+
 .App {
   align-items: center;
   flex-direction: column;
