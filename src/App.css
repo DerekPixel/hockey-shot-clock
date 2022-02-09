@@ -95,6 +95,16 @@ Generic Classes
   cursor: pointer;
 }
 
+.neutral-btn {
+  border: 1px solid black;
+  background-color: hsl(0, 0%, 60%);
+}
+
+.neutral-btn:hover {
+  background-color: hsl(0, 0%, 75%);
+  cursor: pointer;
+}
+
 /* 
 ==================================
 TeamNameInputs
@@ -171,9 +181,15 @@ ShotsGrid
   width: 100%;
 }
 
+.period-shots {
+  display: flex;
+  flex-direction: column;
+}
+
 .period-shots,
 .home-guest {
   padding: 0.625rem;
+  gap: 1rem;
 }
 
 .home-guest {
@@ -238,6 +254,7 @@ ShotsGrid
 
   .period-shots {
     display: flex;
+    flex-direction: row;
     align-items: center;
     justify-content: space-around;
     width: 100%;
