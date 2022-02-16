@@ -1,22 +1,15 @@
 {
   "files": {
-    "main.css": "/hockey-shot-clock/static/css/main.f2ad4309.chunk.css",
-    "main.js": "/hockey-shot-clock/static/js/main.070ddfaf.chunk.js",
-    "main.js.map": "/hockey-shot-clock/static/js/main.070ddfaf.chunk.js.map",
-    "runtime-main.js": "/hockey-shot-clock/static/js/runtime-main.95bcda73.js",
-    "runtime-main.js.map": "/hockey-shot-clock/static/js/runtime-main.95bcda73.js.map",
-    "static/js/2.ef0b8fef.chunk.js": "/hockey-shot-clock/static/js/2.ef0b8fef.chunk.js",
-    "static/js/2.ef0b8fef.chunk.js.map": "/hockey-shot-clock/static/js/2.ef0b8fef.chunk.js.map",
-    "static/js/3.e79a9aee.chunk.js": "/hockey-shot-clock/static/js/3.e79a9aee.chunk.js",
-    "static/js/3.e79a9aee.chunk.js.map": "/hockey-shot-clock/static/js/3.e79a9aee.chunk.js.map",
+    "main.css": "/hockey-shot-clock/static/css/main.389df186.css",
+    "main.js": "/hockey-shot-clock/static/js/main.6defb6ad.js",
+    "static/js/787.e8fab724.chunk.js": "/hockey-shot-clock/static/js/787.e8fab724.chunk.js",
     "index.html": "/hockey-shot-clock/index.html",
-    "static/css/main.f2ad4309.chunk.css.map": "/hockey-shot-clock/static/css/main.f2ad4309.chunk.css.map",
-    "static/js/2.ef0b8fef.chunk.js.LICENSE.txt": "/hockey-shot-clock/static/js/2.ef0b8fef.chunk.js.LICENSE.txt"
+    "main.389df186.css.map": "/hockey-shot-clock/static/css/main.389df186.css.map",
+    "main.6defb6ad.js.map": "/hockey-shot-clock/static/js/main.6defb6ad.js.map",
+    "787.e8fab724.chunk.js.map": "/hockey-shot-clock/static/js/787.e8fab724.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.95bcda73.js",
-    "static/js/2.ef0b8fef.chunk.js",
-    "static/css/main.f2ad4309.chunk.css",
-    "static/js/main.070ddfaf.chunk.js"
+    "static/css/main.389df186.css",
+    "static/js/main.6defb6ad.js"
   ]
 }
