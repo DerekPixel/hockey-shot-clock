@@ -37,7 +37,7 @@ function App() {
   }
 
   function handleKeyPresses(e) {
-    var value = e.key;
+    var value = e.key.toLowerCase();
 
     handleValueFromInput(value);
   }
