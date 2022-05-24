@@ -1,7 +1,11 @@
 import React from 'react'
 
-function ShotsGridControls({handleValueFromInput}) {
+function ShotsGridControls({handleValueFromInput, shootout,  setShootout, addRoundToShootoutGrid}) {
 
+
+  function handleOnChange() {
+    setShootout(!shootout);
+  }
 
 
   return (
@@ -64,6 +68,28 @@ function ShotsGridControls({handleValueFromInput}) {
 
         </div>
       </div>
+
+      <div className="shootout-controls">
+
+        <h3 className="period-title">Shootout Controls</h3>
+
+        <div className="shootout-toggle">
+          <div>
+            <input type="checkbox" id="input-toggle" className='toggle' checked={shootout} onChange={handleOnChange}/>
+            <label id='label-toggle' htmlFor="input-toggle"></label>
+          </div>
+        </div>
+
+        <div className="shootout-rounds">
+          
+          <button className="neutral-btn" onClick={addRoundToShootoutGrid}>
+            +1 round
+          </button>
+
+        </div>
+
+      </div>
+
     </div>
   )
 }
