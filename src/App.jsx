@@ -4,6 +4,7 @@ import './App.css';
 import ShotsGrid from './Components/ShotsGrid.jsx';
 import TeamNameInputs from './Components/TeamNameInputs.jsx'
 import ShotsGridControls from './Components/ShotsGridControls.jsx';
+import ShootoutGrid from './Components/ShootoutGrid';
 
 
 function App() {
@@ -12,6 +13,8 @@ function App() {
   const [currentPeriod, setCurrentPeriod] = useState('firstPeriod');
   const [teamNames, setTeamNames] = useState({Home: 'Home', Guest: 'Guest'});
   const [teamNameInputsInFocus, setTeamNameInputsInFocus] = useState(false);
+  const [shootout, setShootout] = useState(false);
+  const [shootoutGrid, setShootoutGrid] = useState(initilizeShootoutGrid);
 
   useEffect(() => {
     document.addEventListener('keyup', handleKeyPresses)
@@ -29,6 +32,27 @@ function App() {
     };
 
     return shots;
+  }
+
+  function initilizeShootoutGrid() {
+    let obj = [
+      {round: 1, home: 'awaiting', guest: 'awaiting', homeShooter: 0, guestShooter: 0, index: 0},
+      {round: 2, home: 'awaiting', guest: 'awaiting', homeShooter: 0, guestShooter: 0, index: 1},
+      {round: 3, home: 'awaiting', guest: 'awaiting', homeShooter: 0, guestShooter: 0, index: 2},
+    ];
+    return obj;
+  }
+
+  function addRoundToShootoutGrid() {
+    let gridDupe = duplicateObjectsInArrayOrObject(shootoutGrid);
+
+    let gridLength = gridDupe.length;
+
+    let obj = {round: gridLength + 1, home: 'awaiting', guest: 'awaiting', homeShooter: 0, guestShooter: 0, index: gridLength}
+
+    gridDupe.push(obj);
+
+    setShootoutGrid(gridDupe);
   }
 
   function resetShotsObjectAndCurrentPeriod() {
@@ -133,7 +157,21 @@ function App() {
         teamNames={teamNames}
       />
 
-      <ShotsGridControls handleValueFromInput={(value) => handleValueFromInput(value)} />
+      {
+        shootout &&
+        <ShootoutGrid
+          shootoutGrid={shootoutGrid}
+          setShootoutGrid={setShootoutGrid}
+        />
+      }
+
+
+      <ShotsGridControls 
+        handleValueFromInput={(value) => handleValueFromInput(value)} 
+        shootout={shootout}
+        setShootout={setShootout}
+        addRoundToShootoutGrid={addRoundToShootoutGrid}
+      />
 
       <button
         className='reset-btn'
