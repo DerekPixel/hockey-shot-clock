@@ -273,6 +273,16 @@ ShotsGrid
 
 /* 
 ==================================
+ShotsGrid
+==================================
+*/
+
+.shootout-shooter-number {
+  width: 4ch;
+}
+
+/* 
+==================================
 Shots Grid Controls
 ==================================
 */
@@ -309,4 +319,65 @@ Reset Button
 .reset-btn:hover {
   cursor: pointer;
   background-color: hsl(0, 57%, 60%);
+}
+
+/* 
+==================================
+Fancy Toggle
+==================================
+*/
+
+input[type='checkbox']#input-toggle {
+  height: 0;
+  width: 0;
+  opacity: 0;
+  position: absolute;
+}
+
+input[type='checkbox']#input-toggle + #label-toggle {
+  color: red;
+  user-select: none;
+  font-size: 30px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+input[type='checkbox']#input-toggle + #label-toggle::before {
+  content: '';
+  width: 2em;
+  height: 1em;
+  background-color: hsl(0, 80%, 90%);
+  border-radius: 1em;
+  margin-right: .25em;
+  transition: background-color 200ms ease-in-out;
+}
+
+input[type='checkbox']#input-toggle + #label-toggle::after {
+  position: absolute;
+  left: 0.1em;
+  content: '';
+  width: 0.9em;
+  height: 0.9em;
+  background-color: hsl(0, 80%, 60%);
+  border-radius: 1em;
+  transition: transform 200ms ease-in-out;
+}
+
+input[type='checkbox']#input-toggle:focus-visible + #label-toggle::before {
+  outline: 2px solid black;
+}
+
+input[type='checkbox']#input-toggle:checked + #label-toggle::before {
+  background-color: hsl(120, 80%, 90%);
+}
+
+input[type='checkbox']#input-toggle:checked + #label-toggle::after {
+  transform: translateX(100%);
+  background-color: hsl(120, 80%, 60%);
+}
+
+input[type='checkbox']#input-toggle:checked + #label-toggle {
+  color: green;
 }
