@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function ShootoutGrid({shootoutGrid, setShootoutGrid}) {
+function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrObject, teamNames}) {
 
   function handlePlayerNumbers(e) {
     let target = e.target;
@@ -43,43 +43,19 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid}) {
     setShootoutGrid(gridDupe);
   }
 
-  function duplicateObjectsInArrayOrObject(thingThatNeedsToBeDupped) {
-    let thingCopy, thingClone, objClone;
-  
-    if(returnTrueIfInputIsAnArray(thingThatNeedsToBeDupped)) {
-      thingCopy = thingThatNeedsToBeDupped.slice();
-      thingClone = [];
-      for(let i = 0; i < thingCopy.length; i++) {
-        objClone = {...thingCopy[i]}
-    
-        thingClone.push(objClone);
-      }
-    } else {
-      thingCopy = {...thingThatNeedsToBeDupped};
-      thingClone = {};
-      for(let j = 0; j < Object.keys(thingCopy).length; j++) {
-        objClone = {...thingCopy[Object.keys(thingCopy)[j]]}
-    
-        thingClone[Object.keys(thingCopy)[j]] = objClone;
-      }
-    }
-  
-    return thingClone;
-  }
-
-  function returnTrueIfInputIsAnArray(objectToCheck) {
-    return Array.isArray(objectToCheck);
-  }
-
   let shootoutGridMapped = shootoutGrid.map((roundObj) => {
 
     let roundNumber = roundObj.round;
+    let index = roundNumber - 1;
 
     let homePlayerNumberId = `home-${roundNumber}`;
     let guestPlayerNumberId = `guest-${roundNumber}`;
 
-    let homeRadioOutcome = `home-outcome-round-${roundNumber}`;
-    let guestRadioOutcome = `guest-outcome-round-${roundNumber}`;
+    let homeOutcome = shootoutGrid[index].home;
+    let guestOutcome = shootoutGrid[index].guest;
+
+    let homeRadioOutcomeName = `home-outcome-round-${roundNumber}`;
+    let guestRadioOutcomeName = `guest-outcome-round-${roundNumber}`;
 
     let homeIdSave = `home-save-round-${roundNumber}`;
     let homeIdGoal = `home-goal-round-${roundNumber}`;
@@ -105,29 +81,77 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid}) {
         >
           <div className="home-team">
             <label htmlFor={homePlayerNumberId}>#</label>
-            <input type="text" className='shootout-shooter-number' id={homePlayerNumberId} onChange={handlePlayerNumbers}/>
+            <input 
+              type="text" 
+              className='shootout-shooter-number' 
+              id={homePlayerNumberId} 
+              onChange={handlePlayerNumbers}
+              value={shootoutGrid[index].homeShooter}
+            />
 
-            <div className="shootout-radio-container" onChange={handleOutcome}>
-              <input type="radio" name={homeRadioOutcome} id={homeIdSave} />
+            <div className="shootout-radio-container" >
               <label htmlFor={homeIdSave}>S</label>
-              <input type="radio" name={homeRadioOutcome} id={homeIdGoal} />
+              <input 
+                type="radio" 
+                name={homeRadioOutcomeName} 
+                id={homeIdSave} 
+                checked={homeOutcome === 'save'} 
+                onChange={handleOutcome}
+              />
               <label htmlFor={homeIdGoal}>G</label>
-              <input type="radio" name={homeRadioOutcome} id={homeIdMiss} />
+              <input 
+                type="radio" 
+                name={homeRadioOutcomeName} 
+                id={homeIdGoal} 
+                checked={homeOutcome === 'goal'} 
+                onChange={handleOutcome}
+              />
               <label htmlFor={homeIdMiss}>M</label>
+              <input 
+                type="radio" 
+                name={homeRadioOutcomeName} 
+                id={homeIdMiss} 
+                checked={homeOutcome === 'miss'} 
+                onChange={handleOutcome}
+              />
             </div>
           </div>
 
           <div className="guest-team">
             <label htmlFor={guestPlayerNumberId}>#</label>
-            <input type="text" className='shootout-shooter-number' id={guestPlayerNumberId} onChange={handlePlayerNumbers}/>
+            <input 
+              type="text" 
+              className='shootout-shooter-number' 
+              id={guestPlayerNumberId} 
+              onChange={handlePlayerNumbers}
+              value={shootoutGrid[index].guestShooter}
+            />
 
-            <div className="shootout-radio-container" onChange={handleOutcome}>
-              <input type="radio" name={guestRadioOutcome} id={guestIdSave} />
+            <div className="shootout-radio-container" >
               <label htmlFor={guestIdSave}>S</label>
-              <input type="radio" name={guestRadioOutcome} id={guestIdGoal} />
+              <input 
+                type="radio" 
+                name={guestRadioOutcomeName} 
+                id={guestIdSave} 
+                checked={guestOutcome === 'save'} 
+                onChange={handleOutcome}
+              />
               <label htmlFor={guestIdGoal}>G</label>
-              <input type="radio" name={guestRadioOutcome} id={guestIdMiss} />
+              <input 
+                type="radio" 
+                name={guestRadioOutcomeName} 
+                id={guestIdGoal} 
+                checked={guestOutcome === 'goal'} 
+                onChange={handleOutcome}
+              />
               <label htmlFor={guestIdMiss}>M</label>
+              <input 
+                type="radio" 
+                name={guestRadioOutcomeName} 
+                id={guestIdMiss} 
+                checked={guestOutcome === 'miss'} 
+                onChange={handleOutcome}
+              />
             </div>
           </div>
         </div>
@@ -140,6 +164,19 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid}) {
     <div
       className='shots-grid flex'
     >
+      <div
+        className='teams flex'
+      >
+        <h4
+          className='period-title'
+        >Teams</h4>
+        <div
+          className='home-guest flex'
+        >
+          <div className="home-name">{teamNames.Home}</div>
+          <div className="guest-name">{teamNames.Guest}</div>
+        </div>
+      </div>
       {shootoutGridMapped}
     </div>
   )
