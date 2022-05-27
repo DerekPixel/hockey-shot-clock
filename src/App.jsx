@@ -162,6 +162,8 @@ function App() {
         <ShootoutGrid
           shootoutGrid={shootoutGrid}
           setShootoutGrid={setShootoutGrid}
+          duplicateObjectsInArrayOrObject={duplicateObjectsInArrayOrObject}
+          teamNames={teamNames}
         />
       }
 
