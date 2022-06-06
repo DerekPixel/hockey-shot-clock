@@ -61,7 +61,7 @@ function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
       </div>
       {shotsObjectMapped}
       <div
-        className='shot-totals'
+        className='shot-totals flex'
       >
         <h4
           className='period-title'
