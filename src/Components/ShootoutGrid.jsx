@@ -1,6 +1,6 @@
 import React, {useState} from 'react'
 
-function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrObject, teamNames}) {
+function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrObject, teamNames, winner, setWinner}) {
 
   function handlePlayerNumbers(e) {
     let target = e.target;
@@ -41,6 +41,45 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
     }
 
     setShootoutGrid(gridDupe);
+    calculateShootoutWinner(gridDupe);
+  }
+
+  function calculateShootoutWinner(grid) {
+
+    let homeTotals = 0; 
+    let guestTotals = 0;
+
+    let length = grid.length;
+
+    for(let i = 0; i < length; i++) {
+      if(grid[i].home === 'goal') {
+        homeTotals++;
+      }
+      if(grid[i].guest === 'goal') {
+        guestTotals++;
+      }
+    }
+
+    let outcome = Math.sign(homeTotals - guestTotals);
+
+    let winnerDupe = {...winner};
+
+    if(outcome === 1) {
+      //set home as winner
+      winnerDupe.home = true;
+      winnerDupe.guest = false;
+    } else if(outcome === -1) {
+      //set guest as winner
+      winnerDupe.guest = true;
+      winnerDupe.home = false;
+    } else {
+      //set as neutral 
+      winnerDupe.guest = false;
+      winnerDupe.home = false;
+    }
+
+    setWinner(winnerDupe);
+
   }
 
   let shootoutGridMapped = shootoutGrid.map((roundObj) => {
@@ -178,6 +217,35 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
         </div>
       </div>
       {shootoutGridMapped}
+      <div
+        className='shot-totals flex'
+      >
+        <h4
+          className='period-title'
+        >
+          Winner
+        </h4>
+        <div
+          className='period-shots'
+        >
+          <div
+            className='winner-tag'
+            style={
+              {
+                background: winner.home === true ? 'hsl(120, 100%, 50%)' : 'hsl(120, 0%, 50%)'
+              }
+            }
+          >{winner.home === true ? 'Winner' : ''}</div>
+          <div
+            className='winner-tag'
+            style={
+              {
+                background: winner.guest === true ? 'hsl(120, 100%, 50%)' : 'hsl(120, 0%, 50%)'
+              }
+            }
+          >{winner.guest === true ? 'Winner' : ''}</div>
+        </div>
+      </div>
     </div>
   )
 }
