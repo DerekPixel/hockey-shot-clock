@@ -185,6 +185,8 @@ ShotsGrid
 .period-shots {
   display: flex;
   flex-direction: column;
+  height: 100%;
+  justify-content: space-evenly;
 }
 
 .period-shots,
@@ -212,6 +214,17 @@ ShotsGrid
 .shot-totals {
   border: 1px solid black;
   border-left: none;
+  flex-direction: column;
+  height: 100%;
+}
+
+.winner-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  width: 7ch;
+  height: 20px;
 }
 
 @media screen and (max-width: 800px) {
