@@ -15,6 +15,7 @@ function App() {
   const [teamNameInputsInFocus, setTeamNameInputsInFocus] = useState(false);
   const [shootout, setShootout] = useState(false);
   const [shootoutGrid, setShootoutGrid] = useState(initilizeShootoutGrid);
+  const [winner, setWinner] = useState({home: false, guest: false});
 
   useEffect(() => {
     document.addEventListener('keyup', handleKeyPresses)
@@ -164,6 +165,8 @@ function App() {
           setShootoutGrid={setShootoutGrid}
           duplicateObjectsInArrayOrObject={duplicateObjectsInArrayOrObject}
           teamNames={teamNames}
+          winner={winner}
+          setWinner={setWinner}
         />
       }
 
