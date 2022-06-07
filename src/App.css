@@ -289,7 +289,7 @@ ShotsGrid
 
 /* 
 ==================================
-ShotsGrid
+Shootout grid
 ==================================
 */
 
@@ -318,6 +318,27 @@ Shots Grid Controls
   margin: 0.625rem 0;
 }
 
+.shootout-controls {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shootout-toggle-and-round {
+  width: 100%;
+  padding: 10px;
+}
+
+.shootout-toggle {
+  display: flex;
+  justify-content: center;
+}
+
+.shootout-rounds {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
 
 /* 
 ==================================
@@ -366,7 +387,6 @@ input[type='checkbox']#input-toggle + #label-toggle::before {
   height: 1em;
   background-color: hsl(0, 80%, 90%);
   border-radius: 1em;
-  margin-right: .25em;
   transition: background-color 200ms ease-in-out;
 }
 
