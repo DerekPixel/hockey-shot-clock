@@ -69,23 +69,23 @@ function ShotsGridControls({handleValueFromInput, shootout,  setShootout, addRou
         </div>
       </div>
 
-      <div className="shootout-controls">
+      <div className="shootout-controls flex">
 
-        <h3 className="period-title">Shootout Controls</h3>
+        <h3 className="period-title">Shootout</h3>
 
-        <div className="shootout-toggle">
-          <div>
-            <input type="checkbox" id="input-toggle" className='toggle' checked={shootout} onChange={handleOnChange}/>
-            <label id='label-toggle' htmlFor="input-toggle"></label>
+        <div className="shootout-toggle-and-round">
+          <div className="shootout-toggle">
+            <div>
+              <input type="checkbox" id="input-toggle" className='toggle' checked={shootout} onChange={handleOnChange}/>
+              <label id='label-toggle' htmlFor="input-toggle"></label>
+            </div>
           </div>
-        </div>
-
-        <div className="shootout-rounds">
+          <div className="shootout-rounds">
           
-          <button className="neutral-btn" onClick={addRoundToShootoutGrid}>
-            +1 round
-          </button>
-
+            <button className="neutral-btn" onClick={addRoundToShootoutGrid}>
+              +1 round
+            </button>
+          </div>
         </div>
 
       </div>
