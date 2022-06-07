@@ -167,6 +167,7 @@ function App() {
           teamNames={teamNames}
           winner={winner}
           setWinner={setWinner}
+          setTeamNameInputsInFocus={setTeamNameInputsInFocus}
         />
       }
 

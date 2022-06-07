@@ -1,6 +1,25 @@
-import React, {useState} from 'react'
+import React, {useState, useRef, useEffect} from 'react'
 
-function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrObject, teamNames, winner, setWinner}) {
+function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrObject, teamNames, winner, setWinner, setTeamNameInputsInFocus}) {
+
+  const shootoutGridRef = useRef(null);
+
+  useEffect(() => {
+    document.addEventListener('click', handleDocumentClick);
+    return () => {
+      document.removeEventListener('click', handleDocumentClick);
+    }
+  })
+
+  function handleDocumentClick(e) {
+    // if(submitButton.current === e.target) return
+
+    if(!shootoutGridRef.current.contains(e.target)) {
+      setTeamNameInputsInFocus(false);
+    } else {
+      setTeamNameInputsInFocus(true);
+    }
+  }
 
   function handlePlayerNumbers(e) {
     let target = e.target;
@@ -202,6 +221,7 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
   return (
     <div
       className='shots-grid flex'
+      ref={shootoutGridRef}
     >
       <div
         className='teams flex'
