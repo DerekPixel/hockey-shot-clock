@@ -114,7 +114,16 @@ function App() {
         }
         setShotsObject(shotsClone);
         break;
-
+      case 's':
+        if(shootout) {
+          setShootout(false);
+        } else {
+          setShootout(true);
+        }
+        break;
+      case 'x':
+        addRoundToShootoutGrid();
+        break;
       default:
         break;
     }
