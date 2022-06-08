@@ -77,12 +77,12 @@ function ShotsGridControls({handleValueFromInput, shootout,  setShootout, addRou
           <div className="shootout-toggle">
             <div>
               <input type="checkbox" id="input-toggle" className='toggle' checked={shootout} onChange={handleOnChange}/>
-              <label id='label-toggle' htmlFor="input-toggle"></label>
+              <label id='label-toggle' htmlFor="input-toggle" title='S Key'></label>
             </div>
           </div>
           <div className="shootout-rounds">
           
-            <button className="neutral-btn" onClick={addRoundToShootoutGrid}>
+            <button className="neutral-btn" onClick={addRoundToShootoutGrid} title='X Key'>
               +1 round
             </button>
           </div>
