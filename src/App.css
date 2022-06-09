@@ -144,78 +144,63 @@ TeamNameInputs
   outline-color: red;
 }
 
+
 /* 
 ==================================
-ShotsGrid
+OmniGrid
 ==================================
 */
 
-.shots-grid {
+.flexable-grid {
   flex-direction: row;
   align-items: center;
   text-align: center;
   width: max-content;
 }
 
-.teams {
-  border-left: 1px solid black;
-  height: 100%;
-}
-
-.period,
-.teams {
+.flexable-grid-first-block {
   border: 1px solid black;
+  height: 100%;
   flex-direction: column;
   max-width: 10rem;
 }
 
-.period {
+.flexable-grid-middle-block {
+  border: 1px solid black;
   border-left: none;
+  flex-direction: column;
+  max-width: 10rem;
 }
 
-.period-title {
+.flexable-grid-last-block {
+  border: 1px solid black;
+  border-left: none;
+  flex-direction: column;
+  height: 100%;
+}
+
+.flexable-grid-inner-title {
   color: black;
   background-color: hsl(120, 100%, 31%);
   font-weight: bold;
-  padding: 0.125rem 0.625rem 0.125rem 0.625rem;
+  padding: 0.125rem 0.250rem;
   height: max-content;
   width: 100%;
 }
 
-.period-shots {
+.flexable-grid-inner-block {
   display: flex;
   flex-direction: column;
   height: 100%;
   justify-content: space-evenly;
-}
-
-.period-shots,
-.home-guest {
   padding: 0.625rem;
   gap: 1rem;
-}
-
-.home-guest {
-  flex-direction: column;
-  justify-content: space-evenly;
-  height: 100%;
-}
-
-.home-guest > input {
-  width: max-content;
 }
 
 .home-name,
 .guest-name {
   max-height: 1rem;
   overflow: hidden;
-}
-
-.shot-totals {
-  border: 1px solid black;
-  border-left: none;
-  flex-direction: column;
-  height: 100%;
 }
 
 .winner-tag {
@@ -228,30 +213,22 @@ ShotsGrid
 }
 
 @media screen and (max-width: 800px) {
-  .shots-grid {
+  .flexable-grid {
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
 
-  .shots-grid > div {
+  .flexable-grid > div {
     width: 100%;
   }
 
-  .home-guest {
-    flex-direction: row;
-    justify-content: space-evenly;
-    gap: 1rem;
+  .flexable-grid-first-block {
+    border-bottom: none;
+    max-width: none;
   }
 
-  .home-name,
-  .guest-name {
-    max-width: 6rem;
-    min-width: 4rem;
-  }
-
-  .period,
-  .teams {
+  .flexable-grid-middle-block {
     border-top: none;
     border-bottom: none;
     border-left: 1px solid black;
@@ -259,32 +236,23 @@ ShotsGrid
     max-width: none;
   }
 
-  .teams {
-    border-top: 1px solid black;
-  }
-
-  .period {
-    align-items: center;
-    flex-direction: column;
-  }
-
-  .period-shots {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
-    width: 100%;
-  }
-
-  .shot-totals {
-    border-left: 1px solid black;
+  .flexable-grid-last-block {
     border-top: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    border-left: 1px solid black;
   }
 
+  .home-name,
+  .guest-name {
+    max-width: 6rem;
+    width: max-content;
+    min-width: 4rem;
+  }
+
+  .flexable-grid-inner-block {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+  }
 }
 
 /* 
