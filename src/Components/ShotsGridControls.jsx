@@ -12,7 +12,7 @@ function ShotsGridControls({handleValueFromInput, shootout,  setShootout, addRou
     <div className='shot-grid-controls'>
       <div className="shot-controls">
 
-        <h3 className="period-title">Shot Controls</h3>
+        <h3 className="flexable-grid-inner-title">Shot Controls</h3>
         
         <div className="add-shots flex">
 
@@ -34,7 +34,7 @@ function ShotsGridControls({handleValueFromInput, shootout,  setShootout, addRou
       </div>
       <div className="period-controls">
 
-        <h3 className="period-title">Period Controls</h3>
+        <h3 className="flexable-grid-inner-title">Period Controls</h3>
 
         <div className="period-select flex">
 
@@ -71,7 +71,7 @@ function ShotsGridControls({handleValueFromInput, shootout,  setShootout, addRou
 
       <div className="shootout-controls flex">
 
-        <h3 className="period-title">Shootout</h3>
+        <h3 className="flexable-grid-inner-title">Shootout Controls</h3>
 
         <div className="shootout-toggle-and-round">
           <div className="shootout-toggle">

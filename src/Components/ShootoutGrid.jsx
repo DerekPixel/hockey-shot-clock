@@ -126,16 +126,16 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
     return (
       <div
         key={roundNumber}
-        className='period flex'
+        className='flexable-grid-middle-block flex'
       >
         <h4
-          className='period-title'
+          className='flexable-grid-inner-title'
         >
           {`ROUND ${roundNumber}`}
         </h4>
 
         <div
-          className='period-shots'
+          className='flexable-grid-inner-block'
         >
           <div className="home-team">
             <label htmlFor={homePlayerNumberId}>#</label>
@@ -220,17 +220,17 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
 
   return (
     <div
-      className='shots-grid flex'
+      className='flexable-grid flex'
       ref={shootoutGridRef}
     >
       <div
-        className='teams flex'
+        className='flexable-grid-first-block flex'
       >
         <h4
-          className='period-title'
+          className='flexable-grid-inner-title'
         >Teams</h4>
         <div
-          className='home-guest flex'
+          className='flexable-grid-inner-block flex'
         >
           <div className="home-name">{teamNames.Home}</div>
           <div className="guest-name">{teamNames.Guest}</div>
@@ -238,15 +238,15 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
       </div>
       {shootoutGridMapped}
       <div
-        className='shot-totals flex'
+        className='flexable-grid-last-block flex'
       >
         <h4
-          className='period-title'
+          className='flexable-grid-inner-title'
         >
           Winner
         </h4>
         <div
-          className='period-shots'
+          className='flexable-grid-inner-block'
         >
           <div
             className='winner-tag'

@@ -15,17 +15,17 @@ function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
     return (
       <div
         key={periodKeyname}
-        className='period flex'
+        className='flexable-grid-middle-block flex'
       >
         <h4
-          className='period-title'
+          className='flexable-grid-inner-title'
           style={{
             backgroundColor: periodKeyname === currentPeriod && 'hsl(120, 100%, 50%)'
           }}
         >{shotsObject[periodKeyname].period.toUpperCase()}</h4>
 
         <div
-          className='period-shots'
+          className='flexable-grid-inner-block'
         >
           <div
             className='home-team-shots'
@@ -44,16 +44,16 @@ function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
 
   return (
     <div
-      className='shots-grid flex'
+      className='flexable-grid flex'
     >
       <div
-        className='teams flex'
+        className='flexable-grid-first-block flex'
       >
         <h4
-          className='period-title'
+          className='flexable-grid-inner-title'
         >Teams</h4>
         <div
-          className='home-guest flex'
+          className='flexable-grid-inner-block flex'
         >
           <div className="home-name">{teamNames.Home}</div>
           <div className="guest-name">{teamNames.Guest}</div>
@@ -61,15 +61,15 @@ function ShotsGrid({shotsObject, setShotsObject, currentPeriod, teamNames}) {
       </div>
       {shotsObjectMapped}
       <div
-        className='shot-totals flex'
+        className='flexable-grid-last-block flex'
       >
         <h4
-          className='period-title'
+          className='flexable-grid-inner-title'
         >
           Total
         </h4>
         <div
-          className='period-shots'
+          className='flexable-grid-inner-block'
         >
           <div>{returnShotTotal('home')}</div>
           <div>{returnShotTotal('guest')}</div>
