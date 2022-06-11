@@ -126,7 +126,7 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
     return (
       <div
         key={roundNumber}
-        className='flexable-grid-middle-block flex'
+        className='flexable-grid-middle-block flex f-col border-thin-blk'
       >
         <h4
           className='flexable-grid-inner-title'
@@ -224,7 +224,7 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
       ref={shootoutGridRef}
     >
       <div
-        className='flexable-grid-first-block flex'
+        className='flexable-grid-first-block flex f-col border-thin-blk'
       >
         <h4
           className='flexable-grid-inner-title'
@@ -238,7 +238,7 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
       </div>
       {shootoutGridMapped}
       <div
-        className='flexable-grid-last-block flex'
+        className='flexable-grid-last-block flex f-col border-thin-blk'
       >
         <h4
           className='flexable-grid-inner-title'

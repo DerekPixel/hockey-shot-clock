@@ -85,6 +85,14 @@ Generic Classes
   display: flex;
 }
 
+.f-col {
+  flex-direction: column;
+}
+
+.border-thin-blk {
+  border: 1px solid black;
+}
+
 .green-btn {
   border: 1px solid black;
   background-color: hsl(120, 100%, 31%);
@@ -159,23 +167,17 @@ OmniGrid
 }
 
 .flexable-grid-first-block {
-  border: 1px solid black;
   height: 100%;
-  flex-direction: column;
   max-width: 10rem;
 }
 
 .flexable-grid-middle-block {
-  border: 1px solid black;
   border-left: none;
-  flex-direction: column;
   max-width: 10rem;
 }
 
 .flexable-grid-last-block {
-  border: 1px solid black;
   border-left: none;
-  flex-direction: column;
   height: 100%;
 }
 
@@ -201,15 +203,6 @@ OmniGrid
 .guest-name {
   max-height: 1rem;
   overflow: hidden;
-}
-
-.winner-tag {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-weight: bold;
-  width: 7ch;
-  height: 20px;
 }
 
 @media screen and (max-width: 800px) {
@@ -241,17 +234,17 @@ OmniGrid
     border-left: 1px solid black;
   }
 
+  .flexable-grid-inner-block {
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 1rem;
+  }
+
   .home-name,
   .guest-name {
     max-width: 6rem;
     width: max-content;
     min-width: 4rem;
-  }
-
-  .flexable-grid-inner-block {
-    flex-direction: row;
-    justify-content: space-around;
-    gap: 1rem;
   }
 }
 
@@ -263,6 +256,15 @@ Shootout grid
 
 .shootout-shooter-number {
   width: 4ch;
+}
+
+.winner-tag {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  width: 7ch;
+  height: 20px;
 }
 
 /* 
