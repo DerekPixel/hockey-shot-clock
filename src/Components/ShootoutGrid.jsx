@@ -221,6 +221,7 @@ function ShootoutGrid({shootoutGrid, setShootoutGrid, duplicateObjectsInArrayOrO
   return (
     <div
       className='flexable-grid flex'
+      id='shootout-grid'
       ref={shootoutGridRef}
     >
       <div
