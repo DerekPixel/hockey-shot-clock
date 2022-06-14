@@ -68,7 +68,7 @@ box-sizing: border-box;
   align-items: center;
   flex-direction: column;
   padding-top: 1rem;
-  height: 100vh;
+  height: max-content;
 }
 
 .App > div {
@@ -254,6 +254,10 @@ Shootout grid
 ==================================
 */
 
+#shootout-grid {
+  height: 138px;
+}
+
 .shootout-shooter-number {
   width: 4ch;
 }
@@ -265,6 +269,12 @@ Shootout grid
   font-weight: bold;
   width: 7ch;
   height: 20px;
+}
+
+@media screen and (max-width: 800px) {
+  #shootout-grid {
+    height: auto;
+  }
 }
 
 /* 
