@@ -201,7 +201,7 @@ OmniGrid
 
 .home-name,
 .guest-name {
-  max-height: 1rem;
+  max-height: 18px;
   overflow: hidden;
 }
 
