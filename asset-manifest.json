@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/hockey-shot-clock/static/css/main.207f0309.css",
-    "main.js": "/hockey-shot-clock/static/js/main.c729bb13.js",
+    "main.css": "/hockey-shot-clock/static/css/main.76b22e02.css",
+    "main.js": "/hockey-shot-clock/static/js/main.3b6367a8.js",
     "static/js/787.e8fab724.chunk.js": "/hockey-shot-clock/static/js/787.e8fab724.chunk.js",
     "index.html": "/hockey-shot-clock/index.html",
-    "main.207f0309.css.map": "/hockey-shot-clock/static/css/main.207f0309.css.map",
-    "main.c729bb13.js.map": "/hockey-shot-clock/static/js/main.c729bb13.js.map",
+    "main.76b22e02.css.map": "/hockey-shot-clock/static/css/main.76b22e02.css.map",
+    "main.3b6367a8.js.map": "/hockey-shot-clock/static/js/main.3b6367a8.js.map",
     "787.e8fab724.chunk.js.map": "/hockey-shot-clock/static/js/787.e8fab724.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.207f0309.css",
-    "static/js/main.c729bb13.js"
+    "static/css/main.76b22e02.css",
+    "static/js/main.3b6367a8.js"
   ]
 }
