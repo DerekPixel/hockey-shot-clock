@@ -56,9 +56,11 @@ function App() {
     setShootoutGrid(gridDupe);
   }
 
-  function resetShotsObjectAndCurrentPeriod() {
+  function resetGameObjects() {
     setShotsObject(initilizeShotsObject());
     setCurrentPeriod('firstPeriod');
+    setShootoutGrid(initilizeShootoutGrid());
+    setWinner({home: false, guest: false});
   }
 
   function handleKeyPresses(e) {
@@ -190,7 +192,7 @@ function App() {
 
       <button
         className='reset-btn'
-        onClick={() => resetShotsObjectAndCurrentPeriod()}
+        onClick={() => resetGameObjects()}
       >RESET</button>
 
     </div>
